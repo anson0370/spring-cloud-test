@@ -13,6 +13,7 @@
         <module>provider</module>
         <module>consumer</module>
         <module>provider-api</module>
+        <module>proxy</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
