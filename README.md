@@ -1,6 +1,10 @@
 # Spring Cloud example
 
-使用 feign 进行类型安全调用，并使用 eureka 、consul 或 zookeeper 作为注册中心
+使用 feign 进行类型安全调用，并使用 eureka 、consul 或 zookeeper 作为注册中心。
+
+使用 zuul 在入口代理多服务，使用 sidecar 引入 node 暴露的服务。
+
+推荐使用 IntelliJ IDEA 导入本工程。
 
 ## Case 1 ：基础使用
 
