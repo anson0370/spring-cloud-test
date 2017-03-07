@@ -35,8 +35,20 @@
 
 ## Case 4 : 使用 zuul 代理请求
 
-* 在 case 1 使用 consul 的基础上（未在 proxy 工程中引入 eureka 和 zk 的依赖，可以自行尝试）
+* 在 case 1 使用 consul 的基础上（未在 proxy 工程中引入 zk 的依赖，可以自行尝试）
 * 运行 `proxy/src/main/java/so.anson.springcloud.proxy.ProxyApplication`
 * 验证请求代理成功
   * 在浏览器中打开 `http://localhost:4444/service-a/add?a=1&b=2`
   * 在浏览器中打开 `http://localhost:4444/service-b/minus?a=1&b=2`
+  
+## Case 5 : 使用 sidecar 引入 node 服务
+
+* 运行 node 应用
+  * 进入 `node-service` 目录
+  * `npm install`
+  * `node index.js`
+* 默认使用 consul ，可自行修改 `pom.xml` 和 `application.properties` 来尝试 eureka
+* 运行 `sidecar/src/main/java/so.anson.springcloud.sidecar.SidecarApplication`
+* 验证注册成功
+  * 查看注册中心中的注册端口是否为 5555
+  * 在浏览器中打开 `http://localhost:5556/node-sidecar/square?n=10` ，得到输出结果 100
